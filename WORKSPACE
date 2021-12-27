@@ -7,7 +7,7 @@ check_min_bazel_version("4.0.0")
 load("//bazel:repositories.bzl", "pl_deps")
 
 # Install Pixie Labs Dependencies.
-pl_deps()
+#pl_deps()
 
 # Order is important. Try to go from most basic/primitive to higher level packages.
 # - protobuf_deps
@@ -79,25 +79,25 @@ load("//bazel:gogo.bzl", "gogo_grpc_proto")
 gogo_grpc_proto(name = "gogo_grpc_proto")
 
 # Setup tensorflow.
-load("@org_tensorflow//tensorflow:workspace.bzl", "tf_repositories")
+#load("@org_tensorflow//tensorflow:workspace.bzl", "tf_repositories")
 
-tf_repositories()
+#tf_repositories()
 
 load("//bazel:pl_workspace.bzl", "pl_model_files")
 
 pl_model_files()
 
 # Setup the environment for the open-source python API.
-load("@rules_python//python:pip.bzl", "pip_parse")
+#load("@rules_python//python:pip.bzl", "pip_parse")
 
-pip_parse(
-    name = "vizier_api_python_deps",
-    requirements_lock = "//src/api/python:requirements.txt",
-)
+#pip_parse(
+#    name = "vizier_api_python_deps",
+#    requirements_lock = "//src/api/python:requirements.txt",
+#)
 
-load("@vizier_api_python_deps//:requirements.bzl", "install_deps")
+#load("@vizier_api_python_deps//:requirements.bzl", "install_deps")
 
-install_deps()
+#install_deps()
 
 # Setup thrift: used for building Stirling tracing targets.
 load("//bazel:thrift.bzl", "thrift_deps")
@@ -120,7 +120,7 @@ bind(
 
 # gazelle:repo bazel_gazelle
 
-load("//:go_deps.bzl", "pl_go_dependencies")
+#load("//:go_deps.bzl", "pl_go_dependencies")
 
 # gazelle:repository_macro go_deps.bzl%pl_go_dependencies
-pl_go_dependencies()
+#pl_go_dependencies()
