@@ -152,7 +152,7 @@ container_image(
 # Trimmed versions are ~8MB compressed and ~110MB uncompressed.
 # These are all trimmed versions, so we have 8 * 12 = 96 MB of headers.
 linux_headers_tarballs = [
-    "@linux_headers_3.10.0_tar_gz//file:file",
+    "@linux_headers_3_10_0_tar_gz//file:file",
     "@linux_headers_4_14_176_tar_gz//file:file",
     "@linux_headers_4_15_18_tar_gz//file:file",
     "@linux_headers_4_16_18_tar_gz//file:file",
