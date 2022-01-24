@@ -35,7 +35,7 @@ import (
 const (
 	k8sMinVersion     = "1.16.0"
 	kubectlMinVersion = "1.10.0"
-	kernelMinVersion  = "4.14.0"
+	kernelMinVersion  = "3.10.0"
 )
 
 // ClusterType represents all possible types of a K8s cluster.

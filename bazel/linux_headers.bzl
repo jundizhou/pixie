@@ -98,6 +98,13 @@ def linux_headers():
     )
 
     http_file(
+        name = "linux_headers_3_10_0_tar_gz",
+        urls = ["https://kdlibrary.oss-cn-beijing.aliyuncs.com/linux-headers-3.10.0-trimmed-pl3.tar.gz"],
+        sha256 = "399829a43769b68e70c1b8396f14c71973ec262e9b8894388f4d208694428e21",
+        downloaded_file_path = "linux-headers-3.10.0.tar.gz",
+    )
+
+    http_file(
         name = "linux_headers_5_0_21_tar_gz",
         urls = ["https://storage.googleapis.com/pixie-dev-public/linux-headers-5.0.21-trimmed-pl3.tar.gz"],
         sha256 = "3d044deec38127c05de3951cc5521370f500e8b85faed0497c447356dbd3af49",

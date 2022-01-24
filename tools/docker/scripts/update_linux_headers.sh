@@ -27,6 +27,7 @@ cd "$script_dir"/.. || exit
 REV=pl3
 
 KERNEL_VERSIONS=(
+  3.10.0
   4.14.176
   4.15.18
   4.16.18
