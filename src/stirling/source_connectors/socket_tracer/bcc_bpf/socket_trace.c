@@ -1289,8 +1289,13 @@ int syscall__probe_ret_sendmmsg(struct pt_regs* ctx) {
   return 0;
 }
 
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 19, 0)
 // ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);
 int syscall__probe_entry_recvmsg(struct pt_regs* ctx, int sockfd, struct user_msghdr* msghdr) {
+#else
+int syscall__probe_entry_recvmsg(struct pt_regs* ctx, int sockfd, struct msghdr* msghdr) {
+#endif
   uint64_t id = bpf_get_current_pid_tgid();
 
   if (msghdr != NULL) {
